@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstap  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+
+    .ticket-container {
+      background-color: #ffffff;
+      /* color: #d2652d; */
+      border: 1px solid black;
+      border-radius: 2px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .mid-content {
+      padding-top: 10px;
+    }
+
+    .last-content {
+      padding-top: 10px;
+    }
+
+    .facilities{
+      margin-left: 0px;
+    }
+
+    .facilities ul {
+      display: flex;
+      padding-left: 0px;
+      
+      
+    }
+
+    .facilities li {
+
+      list-style: none;
+      margin: 8px 8px;
+      border-left: 1px solid red;
+      
+      
+    }
+
+    .facilities li a {
+      /* padding: 3px 3px; */
+      text-decoration: none;
+      color: rgb(175, 144, 43);
+      padding-left: 20px;
+      justify-content: center;
+      
+
+
+    }
+
+    .facilities li a:hover{
+      color: rgb(116, 85, 0);
+    }
+
+
+    .brand p{
+      color: rgb(145, 147, 147);
+    }
+
+    .uper-mid h6{
+      color: rgb(145, 147, 147);
+      margin-top: 20px;
+      font-weight: 300;
+    }
+
+    .btn-seat{
+      margin-top: 15px;
+      background-color: red;
+      border: none;
+      color: #ebecee;
+      padding: 5px 12px 5px 12px;
+    }
+
+    .btn-seat:hover{
+      background-color: rgb(244, 86, 86);
+    }
+
+    .amminites-logo i{
+      padding-right: 10px;
+      color: rgb(247, 215, 53);
+      margin-bottom: 10px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Starts -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <i class="fa-solid fa-bus fa-2x mr-2" style="color: #ffffff;"></i>
+    <a class="navbar-brand" style="color: #ffffff; font-weight: 700;" href="#">Quick Bus</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+
+                <a class="nav-link" href="/"><i class="fa-solid fa-house mr-2" style="color: #c89336;"></i>Home
+                    <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="book-now.html"><i class="fa-solid fa-ticket mr-2"
+                        style="color: #c89336;"></i>Book Now</a>
+
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                        class="fa-solid fa-list-check mr-2" style="color: #c89336;"></i>
+                    Manage Tickets
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="live-ticket.html">Live Tickets</a>
+                    <a class="dropdown-item" href="modify-ticket.html">Modify Tickets</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="ticket-cancellation.html">Refund/Cancellations</a>
+                    <!-- <a class="dropdown-item" href="#">Write for us</a> -->
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="locate.html" data-toggle="modal" data-target="#locateModal"><i
+                        class="fa-solid fa-location-dot mr-2" style="color: #c89336;"></i>Locate Bus</a>
+
+
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html"><i class="fa-solid fa-phone mr-2"
+                        style="color: #c89336;"></i>Contact Us</a>
+            </li>
+
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <div class="mx-2">
+            <button class="btn btn-warning" data-toggle="modal" data-target="#loginModal"><!-- <i
+                    class="fa-solid fa-right-to-bracket mr-2" style="color: #c89336;"></i> -->Login</button>
+            <button class="btn btn-warning" data-toggle="modal" data-target="#signupModal">SignUp</button>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login to Quick Bus</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-warning">Login</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Get an Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cexampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="cexampleInputPassword1">
+                    </div>
+
+                    <button type="submit" class="btn btn-warning">Creat Account</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Locate Modal Start -->
+<div class="modal fade" id="locateModal" tabindex="-1" role="dialog" aria-labelledby="locateModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="locateModalLabel">Track My Bus</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ticket No</label>
+                        <input type="number" class="form-control" id="exampleInputNumber1"
+                            aria-describedby="numberHelp" required>
+                        <small id="emailHelp" class="form-text text-muted">Enter the Ticket Number of Bus you have
+                            to Track.</small>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cexampleInputPassword1">Confirm Password</label>
+                        <input type="password" class="form-control" id="cexampleInputPassword1">
+                    </div> -->
+
+                    <!-- <button type="submit" class="btn btn-primary"> <a href="locate.html" style="color: white;">Locate Bus</a></button> -->
+                    <a href="locate.html" role="button" class="btn btn-warning">Locate</a>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Locate Modal End  -->
+<!-- Navbar End  -->
+
+
+
+<!-- Ticket-Section Starts  -->
+
+
+<!-- Ticket-1  -->
+
+  <div class="container ticket-container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="upper-left">
+          <div class="logo"><img style="width: 80px; height: 50px;" class="img-fluid" src="../img/bus-logo.png" alt=""></div>
+          <div class="brand">
+            <h5>QuickBus</h5>
+            <p>Bharat Benz A/C Seater</p>
+            <div class="amminites-logo">
+              <i class="fa-solid fa-tv"></i> <i class="fa-solid fa-charging-station"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-location-dot"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mid-content col">
+        <div class="uper-mid d-flex">
+          <h5 style="padding-right: 40px;">05:45 <p>Swargate</p>
+          </h5>
+          <h6>3:00 Hours</h6>
+          <h5 style="padding-left: 40px;">07:45 <p>Mumbai</p>
+          </h5>
+        </div>
+
+        <div class="facilities">
+          <ul>
+            <li><a href="">Amineties</a></li>
+            <li><a href="">Photos</a></li>
+            <li><a href="">Reviews</a></li>
+            <!-- <li><a href="">Policies</a></li> -->
+            <!-- <li><a href=""></a> </li> -->
+          </ul>
+        </div>
+
+      </div>
+      <div class="last-content col">
+        <div class="price">
+          <h6>Staring From</h6>
+          <h5> <span style="font-weight: 200;">INR</span> 800</h5>
+
+          <button class="btn-seat">View Seats</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Ticket-2  -->
+
+  <div class="container ticket-container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="upper-left">
+          <div class="logo"><img style="width: 80px; height: 50px;" class="img-fluid" src="../img/bus-logo.png" alt=""></div>
+          <div class="brand">
+            <h5>QuickBus</h5>
+            <p>Bharat Benz A/C Seater</p>
+            <div class="amminites-logo">
+              <i class="fa-solid fa-tv"></i> <i class="fa-solid fa-charging-station"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-location-dot"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mid-content col">
+        <div class="uper-mid d-flex">
+          <h5 style="padding-right: 40px;">05:45 <p>Swargate</p>
+          </h5>
+          <h6>3:00 Hours</h6>
+          <h5 style="padding-left: 40px;">07:45 <p>Mumbai</p>
+          </h5>
+        </div>
+
+        <div class="facilities">
+          <ul>
+            <li><a href="">Amineties</a></li>
+            <li><a href="">Photos</a></li>
+            <li><a href="">Reviews</a></li>
+            <!-- <li><a href="">Policies</a></li> -->
+            <!-- <li><a href=""></a> </li> -->
+          </ul>
+        </div>
+
+      </div>
+      <div class="last-content col">
+        <div class="price">
+          <h6>Staring From</h6>
+          <h5> <span style="font-weight: 200;">INR</span> 800</h5>
+
+          <button class="btn-seat">View Seats</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Ticket-3  -->
+
+  <div class="container ticket-container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="upper-left">
+          <div class="logo"><img style="width: 80px; height: 50px;" class="img-fluid" src="../img/bus-logo.png" alt=""></div>
+          <div class="brand">
+            <h5>QuickBus</h5>
+            <p>Bharat Benz A/C Seater</p>
+            <div class="amminites-logo">
+              <i class="fa-solid fa-tv"></i> <i class="fa-solid fa-charging-station"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-location-dot"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mid-content col">
+        <div class="uper-mid d-flex">
+          <h5 style="padding-right: 40px;">05:45 <p>Swargate</p>
+          </h5>
+          <h6>3:00 Hours</h6>
+          <h5 style="padding-left: 40px;">07:45 <p>Mumbai</p>
+          </h5>
+        </div>
+
+        <div class="facilities">
+          <ul>
+            <li><a href="">Amineties</a></li>
+            <li><a href="">Photos</a></li>
+            <li><a href="">Reviews</a></li>
+            <!-- <li><a href="">Policies</a></li> -->
+            <!-- <li><a href=""></a> </li> -->
+          </ul>
+        </div>
+
+      </div>
+      <div class="last-content col">
+        <div class="price">
+          <h6>Staring From</h6>
+          <h5> <span style="font-weight: 200;">INR</span> 800</h5>
+
+          <button class="btn-seat">View Seats</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Ticket-4  -->
+
+  <div class="container ticket-container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="upper-left">
+          <div class="logo"><img style="width: 80px; height: 50px;" class="img-fluid" src="../img/bus-logo.png" alt=""></div>
+          <div class="brand">
+            <h5>QuickBus</h5>
+            <p>Bharat Benz A/C Seater</p>
+            <div class="amminites-logo">
+              <i class="fa-solid fa-tv"></i> <i class="fa-solid fa-charging-station"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-location-dot"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mid-content col">
+        <div class="uper-mid d-flex">
+          <h5 style="padding-right: 40px;">05:45 <p>Swargate</p>
+          </h5>
+          <h6>3:00 Hours</h6>
+          <h5 style="padding-left: 40px;">07:45 <p>Mumbai</p>
+          </h5>
+        </div>
+
+        <div class="facilities">
+          <ul>
+            <li><a href="">Amineties</a></li>
+            <li><a href="">Photos</a></li>
+            <li><a href="">Reviews</a></li>
+            <!-- <li><a href="">Policies</a></li> -->
+            <!-- <li><a href=""></a> </li> -->
+          </ul>
+        </div>
+
+      </div>
+      <div class="last-content col">
+        <div class="price">
+          <h6>Staring From</h6>
+          <h5> <span style="font-weight: 200;">INR</span> 800</h5>
+
+          <button class="btn-seat">View Seats</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket-Section End  -->
+
+
+
+<!-- fotter section  -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" role="button"><i
+                      class="fab fa-facebook-f"></i></a>
+
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.twitter.com" role="button"><i
+                      class="fab fa-twitter"></i></a>
+
+              <!-- Google -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com" role="button"><i
+                      class="fab fa-google"></i></a>
+
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"><i
+                      class="fab fa-instagram"></i></a>
+
+              <!-- Linkedin -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/feed/" role="button"><i
+                      class="fab fa-linkedin-in"></i></a>
+
+              <!-- Github -->
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.github.com" role="button"><i
+                      class="fab fa-github"></i></a>
+          </section>
+          <!-- Section: Social media -->
+
+          <!-- Section: Form -->
+          <section class="">
+              <form action="">
+                  <!--Grid row-->
+                  <div class="row d-flex justify-content-center">
+                      <!--Grid column-->
+                      <div class="col-auto">
+                          <p class="pt-2">
+                              <strong style="color: rgb(107, 185, 172); font-weight: 500;">Sign up for our
+                                  newsletter</strong>
+                          </p>
+                      </div>
+                      <!--Grid column-->
+
+                      <!--Grid column-->
+                      <div class="col-md-5 col-12">
+                          <!-- Email input -->
+                          <div class="form-outline form-white mb-4">
+                              <input type="email" id="form5Example21" class="form-control" />
+                              <label class="form-label" for="form5Example21">Email address</label>
+                          </div>
+                      </div>
+                      <!--Grid column-->
+
+                      <!--Grid column-->
+                      <div class="col-auto">
+                          <!-- Submit button -->
+                          <button type="submit" class="btn btn-outline-light mb-4">
+                              Subscribe
+                          </button>
+                      </div>
+                      <!--Grid column-->
+                  </div>
+                  <!--Grid row-->
+              </form>
+          </section>
+          <!-- Section: Form -->
+
+          <!-- Section: Text -->
+          <section class="mb-4">
+              <p>
+                  Thank you for choosing our Bus Booking Website. We strive to provide you with a seamless and
+                  enjoyable travel experience. For any assistance or inquiries, please contact our 24/7 customer
+                  support. Safe travels and we look forward to serving you again soon!
+              </p>
+          </section>
+          <!-- Section: Text -->
+
+          <!-- Section: Links -->
+          <section class="">
+              <!--Grid row-->
+              <div class="row">
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                      <h5 style="color: rgb(185, 151, 107);" class="text-uppercase">Info</h5>
+
+                      <ul class="list-unstyled mb-0">
+                          <li>
+                              <a href="#!" class="text-white">T&C</a>
+                          </li>
+                          <li>
+                              <a href="#!" class="text-white">Privacy Policy</a>
+                          </li>
+                          <!-- <li>
+                              <a href="#!" class="text-white">Link 3</a>
+                          </li>
+                          <li>
+                              <a href="#!" class="text-white">Link 4</a>
+                          </li> -->
+                      </ul>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                      <h5 style="color: rgb(185, 151, 107);" class="text-uppercase">Services</h5>
+
+                      <ul class="list-unstyled mb-0">
+                          <li>
+                              <a href="book-now.html" class="text-white">Bookings</a>
+                          </li>
+                          <li>
+                              <a href="live-ticket.html" class="text-white">Tickets</a>
+                          </li>
+                          <!-- <li>
+                              <a href="#!" class="text-white">Link 3</a>
+                          </li>
+                          <li>
+                              <a href="#!" class="text-white">Link 4</a>
+                          </li> -->
+                      </ul>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                      <h5 style="color: rgb(185, 151, 107);" class="text-uppercase">About</h5>
+
+                      <ul class="list-unstyled mb-0">
+                          <li>
+                              <a href="#!" class="text-white">About Us</a>
+                          </li>
+                          <li>
+                              <a href="contact.html" class="text-white">Contact Us</a>
+                          </li>
+                          <!-- <li>
+                              <a href="#!" class="text-white">Link 3</a>
+                          </li>
+                          <li>
+                              <a href="#!" class="text-white">Link 4</a>
+                          </li> -->
+                      </ul>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                      <h5 style="color: rgb(185, 151, 107);" class="text-uppercase">Security</h5>
+
+                      <ul class="list-unstyled mb-0">
+                          <li>
+                              <a href="locate.html" class="text-white">Locate</a>
+                          </li>
+                          <li>
+                              <a href="contact.html" class="text-white">Contact</a>
+                          </li>
+                          <!-- <li>
+                              <a href="#!" class="text-white">Link 3</a>
+                          </li>
+                          <li>
+                              <a href="#!" class="text-white">Link 4</a>
+                          </li> -->
+                      </ul>
+                  </div>
+                  <!--Grid column-->
+              </div>
+              <!--Grid row-->
+          </section>
+          <!-- Section: Links -->
+      </div>
+
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="index.html">GauravPisal_Project</a>
+      </div>
+
+  </footer>
+
+  <!-- FooterEnd  -->
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

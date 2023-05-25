@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.section {
+  position: relative;
+  height: 100%;
+}
+
+.section .section-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+#booking {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('../img/bus.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#booking::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(47, 103, 177, 0.6);
+}
+
+.booking-form {
+  background-color: #fff;
+  padding: 50px 20px;
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.booking-form .form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+  background-color: #ebecee;
+  border-radius: 4px;
+  border: none;
+  height: 40px;
+  box-shadow: none;
+  color: #3e485c;
+  font-size: 14px;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+  color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+  color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form .form-control::placeholder {
+  color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+  color: rgba(62, 72, 92, 0.3);
+}
+
+.booking-form select.form-control {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+  position: absolute;
+  right: 0px;
+  bottom: 4px;
+  width: 32px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  pointer-events: none;
+  color: rgba(62, 72, 92, 0.3);
+  font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+  content: '\279C';
+  display: block;
+  transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+  display: inline-block;
+  color: #3e485c;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-left: 7px;
+}
+
+.booking-form .submit-btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #1e62d8;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 4px;
+  border: none;
+  transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+  opacity: 0.9;
+}
+
+.booking-cta {
+
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.booking-cta h1 {
+  font-size: 52px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.booking-cta p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Styles */
+
+@media (max-width: 992px) {
+  .booking-cta h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-cta h1 {
+    font-size: 32px;
+  }
+
+  .booking-cta p {
+    font-size: 14px;
+  }
+
+  .booking-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-cta h1 {
+    font-size: 28px;
+  }
+
+  .booking-cta p {
+    font-size: 12px;
+  }
+
+  .booking-form {
+    padding: 20px;
+  }
+
+  .booking-form .form-label {
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+.maxcontent {
+
+  height: 700px;
+}
+
+
+/* customer testinomial */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+.customer-testinomial{
+
+  margin-bottom: 40px;
+}
+
+.snip1533 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #9e9e9e;
+  display: inline-block;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  margin: 35px 10px 10px;
+  max-width: 310px;
+  min-width: 250px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-top: 5px solid #d2652d;
+  margin: 6%;
+
+}
+
+.snip1533 *,
+.snip1533 *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.snip1533 figcaption {
+  padding: 13% 10% 12%;
+}
+
+.snip1533 figcaption:before {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #d2652d;
+  content: "\f10e";
+  font-family: 'FontAwesome';
+  font-size: 32px;
+  font-style: normal;
+  left: 50%;
+  line-height: 60px;
+  position: absolute;
+  top: -30px;
+  width: 60px;
+}
+
+.snip1533 h3 {
+  color: #3c3c3c;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 10px 0 5px;
+}
+
+.snip1533 h4 {
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.snip1533 blockquote {
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
+
+/* Live Ticket Section CSS Starts  */
+
+.ticket-main{
+
+  background-color: #f3f3f3;
+  border: 0px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+  /* background-image: url('.'); */
+  padding: 10px;
+  margin-top: 52px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.ticket-container {
+  background-image: url('../img/pngwing.com.png');
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 36px;
+  color: #a56262;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.imgqr {
+  display: block;
+  margin: 0 auto;
+  max-width: 25%;
+}
+
+
+
+#reserve {
+  color: #ca9479;
+}
+
+
+
+
+
+
+/* Bus Amenities Styles */
+
+.am-1 {
+  /* background-color: #ffcfb9; */
+  background-color: #ebecee;
+  /* color: #d2652d; */
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.am-1:hover {
+  background-color: #ffc6a7;
+}

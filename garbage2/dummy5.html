@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bus Ticket Booking</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+		}
+
+		.label {
+			display: block;
+			font-weight: bold;
+		}
+
+		.input {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		.seat-map {
+			margin-top: 20px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 20px;
+		}
+
+		.seat-column {
+			display: grid;
+			grid-template-rows: repeat(8, 1fr);
+			grid-gap: 10px;
+		}
+
+		.seat {
+			width: 40px;
+			height: 40px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 14px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.seat.available {
+			background-color: #8bc34a;
+		}
+
+		.seat.selected {
+			background-color: #2196f3;
+		}
+
+		.seat.unavailable {
+			background-color: #f44336;
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Bus Ticket Booking</h1>
+		<form>
+			<div class="form-group">
+				<label class="label" for="name">Name:</label>
+				<input type="text" id="name" name="name" class="input" required>
+			</div>
+
+			<div class="form-group">
+				<label class="label" for="email">Email:</label>
+				<input type="email" id="email" name="email" class="input" required>
+			</div>
+
+			<div class="form-group">
+				<label class="label" for="date">Travel Date:</label>
+				<input type="date" id="date" name="date" class="input" required>
+			</div>
+
+			<div class="form-group">
+				<label class="label" for="time">Travel Time:</label>
+				<input type="time" id="time" name="time" class="input" required>
+			</div>
+
+			<div class="form-group">
+				<label class="label">Select Seats:</label>
+				<div class="seat-map">
+					<div class="seat-column">
+						<!-- Generate the seats for left side dynamically using JavaScript -->
+					</div>
+					<div class="seat-column">
+						<!-- Generate the seats for right side dynamically using JavaScript -->
+					</div>
+				</div>
+			</div>
+
+			<button type="submit">Book Now</button>
+		</form>
+	</div>
+
+	<script>
+		// Generate the seats dynamically using JavaScript
+		const seatColumns = document.querySelectorAll(".seat-column");
+		const rows = 8;
+		const columns = 2;
+		const seats = [];
+
+		// Generate seat labels for left side
+		for (let i = 0; i < rows; i++) {
+			for (let j = 0; j < columns; j++) {
+				const rowLabel = String.fromCharCode(65 + i);
+				const seatLabel = `${rowLabel}${j + 1}`;
+				seats.push(seatLabel);
+			}
+		}
+
+		seats.forEach(seat => {
+			const seatElement = document.createElement("div");
+			seatElement.classList.add("seat", "available");
+			seatElement.textContent = seat;
+
+			seatElement.addEventListener("click", () => {
+				if (seatElement.classList.contains("available")) {
+					seatElement.classList.remove("available");
+					seatElement.classList.add("selected");
+				} else if (seatElement.classList.contains("selected")) {
+					seatElement.classList.remove("selected");
+					seatElement.classList.add("available");
+				}
+			});
+
+			seatColumns[0].appendChild(seatElement);
+		});
+
+		// Generate seat labels for right side
+		seats.forEach(seat => {
+			const seatElement = document.createElement("div");
+			seatElement.classList.add("seat", "available");
+			seatElement.textContent = seat;
+
+			seatElement.addEventListener("click", () => {
+				if (seatElement.classList.contains("available")) {
+					seatElement.classList.remove("available");
+					seatElement.classList.add("selected");
+				} else if (seatElement.classList.contains("selected")) {
+					seatElement.classList.remove("selected");
+					seatElement.classList.add("available");
+				}
+			});
+
+				seatColumns[1].appendChild(seatElement);
+		});
+	</script>
+</body>
+</html>

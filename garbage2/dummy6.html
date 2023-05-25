@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bus-booking-section {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .bus-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .seat-row {
+            display: flex;
+            gap: 5px;
+        }
+
+        .seat {
+            width: 40px;
+            height: 40px;
+            background-color: lightgray;
+            border: 1px solid gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: green;
+            color: white;
+        }
+
+        .aisle {
+            width: 20px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .booking-info {
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bus-booking-section">
+        <h2>Bus Ticket Booking</h2>
+        <div class="bus-layout">
+            <div class="seat-row">
+                <div class="seat" data-seat="1">1</div>
+                <div class="seat aisle"></div>
+                <div class="seat" data-seat="2">2</div>
+                <div class="seat" data-seat="3">3</div>
+                <div class="seat" data-seat="4">4</div>
+            </div>
+            <div class="seat-row">
+                <div class="seat" data-seat="5">5</div>
+                <div class="seat aisle"></div>
+                <div class="seat" data-seat="6">6</div>
+                <div class="seat" data-seat="7">7</div>
+                <div class="seat" data-seat="8">8</div>
+            </div>
+            <div class="seat-row">
+                <div class="seat aisle"></div>
+                <div class="seat aisle"></div>
+                <div class="seat aisle"></div>
+                <div class="seat" data-seat="9">9</div>
+                <div class="seat" data-seat="10">10</div>
+            </div>
+            <div class="seat-row">
+                <div class="seat" data-seat="11">11</div>
+                <div class="seat" data-seat="12">12</div>
+                <div class="seat" data-seat="13">13</div>
+                <div class="seat" data-seat="14">14</div>
+                <div class="seat" data-seat="15">15</div>
+            </div>
+            <!-- Add more seat rows here -->
+        </div>
+        <div class="booking-info">
+            <h3>Booking Information:</h3>
+            <form id="booking-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="seat-number">Seat Number:</label>
+                <input type="text" id="seat-number" name="seat-number" readonly>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                <button type="submit">Book Ticket</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // Get all seat elements
+        const seats = document.querySelectorAll('.seat');
+
+        // Get form elements
+        const form = document.getElementById('booking-form');
+        const seatNumberInput = document.getElementById('seat-number');
+
+        // Create an empty array to store selected seats
+        const selectedSeats = [];
+
+        // Function to handle seat selection
+        function selectSeat() {
+            // Toggle the "selected" class on the clicked seat
+            this.classList.toggle('selected');
+
+            // Get the seat number from the data-seat attribute
+            const seatNumber = this.dataset.seat;
+
+            // Check if the seat is already in the selectedSeats array
+            const seatIndex = selectedSeats.indexOf(seatNumber);
+
+            if (seatIndex === -1) {
+                // Seat is not selected, add it to the selectedSeats array
+                selectedSeats.push(seatNumber);
+            } else {
+                // Seat is already selected, remove it from the selectedSeats array
+                selectedSeats.splice(seatIndex, 1);
+            }
+
+            // Update the seat number input value
+            seatNumberInput.value = selectedSeats.join(', ');
+        }
+
+        // Add click event listener to each seat element
+        seats.forEach(seat => {
+            seat.addEventListener('click', selectSeat);
+        });
+
+        // Handle form submission
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get the form values
+            const name = document.getElementById('name').value;
+            const destination = document.getElementById('destination').value;
+
+            // Validate form inputs
+            if (selectedSeats.length === 0) {
+                alert('Please select at least one seat.');
+                return;
+            }
+
+            if (!name.trim() || !destination.trim()) {
+                alert('Please fill in all the required fields.');
+                return;
+            }
+
+            // Create a booking object with the form data
+            const booking = {
+                name: name,
+                seats: selectedSeats,
+                destination: destination
+            };
+
+            // Perform further actions with the booking data (e.g., send to server)
+            console.log(booking);
+
+            // Reset the form and selected seats
+            form.reset();
+            selectedSeats.length = 0;
+            seats.forEach(seat => {
+                seat.classList.remove('selected');
+            });
+            seatNumberInput.value = '';
+        });
+
+        });
+
+    </script>
+</body>
+
+</html>
